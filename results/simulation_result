@@ -1,0 +1,24 @@
+# Simulation Results
+
+## 1. Overview
+
+The Triple Modular Redundancy (TMR) system was simulated using Verilog HDL in an online simulator. The simulation verifies the functionality of three redundant 8-bit adders, the majority voter, and the fault detection mechanism.
+
+## 2. Test Cases
+
+| Test Case | Input A | Input B | Fault Injection | Output | Fault Detected |
+|---|---:|---:|---|---:|---|
+| Normal Operation | 5 | 3 | Disabled | 8 | No |
+| Fault Injection | 10 | 20 | Enabled | 30 | Yes |
+| Maximum Carry | 255 | 1 | Disabled | 256 | No |
+
+## 3. Observations
+
+- The system produces the correct output during normal operation.
+- A single injected fault in the third adder is masked by the majority voter.
+- The fault detection logic identifies the faulty module.
+- The 9-bit output preserves the carry generated during maximum 8-bit addition.
+
+## 4. Conclusion
+
+The simulation verifies that the designed TMR system can tolerate a single injected fault in one of its redundant modules while maintaining the correct output. The design demonstrates the application of digital redundancy and majority voting for fault-tolerant digital systems.
